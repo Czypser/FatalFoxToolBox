@@ -1,5 +1,5 @@
-from django.conf.urls import include, url
-from django.urls import path
+from django.conf.urls import url
+from django.urls import include, path
 
 from django.contrib import admin
 admin.autodiscover()
@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
     path('admin/', admin.site.urls),
+	path('eqparse/', include('EQParse.urls')),
 ]
